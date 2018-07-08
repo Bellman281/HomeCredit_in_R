@@ -23,3 +23,10 @@ p<-names(p[p=="factor"])
 
 #table categorical values
 lapply(p, function(x) table(app_train[x]) )
+
+
+#density plots
+plot(density(app_train$AMT_CREDIT), main=" Distribution of AMT_CREDIT")
+plot(density(app_train$AMT_INCOME_TOTAL), main=" Distribution of AMT_INCOME_TOTAL")
+plot(density(app_train$AMT_GOODS_PRICE,na.rm = TRUE), main=" Distribution of AMT_GOODS_PRICE")
+
