@@ -13,20 +13,11 @@ head(app_test)
 table(app_train$TARGET)
 hist(app_train$TARGET)
 
-missing_values_table<- function(x)
-{
-return(sum(is.na(x)))
-}
-missing_values_table_pct<- function(x)
-{
-  return(100*sum(is.na(x))/nrow(app_train))
-}
+## Missing values statistics
 
 cbind(lapply(app_train, function(x) sum(is.na(x))),lapply(app_train, function(x) 100*sum(is.na(x))/nrow(app_train)))
-str(app_train)
-lapply(app_train, unique)
 
-
+#categorical variables
 p<-sapply(app_train, class)
 p<-names(p[p=="factor"])
 
