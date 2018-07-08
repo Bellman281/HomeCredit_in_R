@@ -24,9 +24,14 @@ p<-names(p[p=="factor"])
 #table categorical values
 lapply(p, function(x) table(app_train[x]) )
 
+#pie chart sample
+pie(table(app_train[p[1]]), main=paste0(p[1]," aka Types of loan"))
+pie(table(app_train[p[3]]), main=paste0(p[3]," aka Own Car"))
+pie(table(app_train[p[4]]), main=paste0(p[4]," aka Own Realty"))
 
 #density plots
 plot(density(app_train$AMT_CREDIT), main=" Distribution of AMT_CREDIT")
 plot(density(app_train$AMT_INCOME_TOTAL), main=" Distribution of AMT_INCOME_TOTAL")
 plot(density(app_train$AMT_GOODS_PRICE,na.rm = TRUE), main=" Distribution of AMT_GOODS_PRICE")
 
+data$client.inf.1 <- app %>% select(TARGET, NAME_TYPE_SUITE:NAME_HOUSING_TYPE, WEEKDAY_APPR_PROCESS_START)
